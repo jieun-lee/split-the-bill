@@ -1,4 +1,21 @@
 .wrapper {
 	display: flex;
 	justify-content: center;
+	height: 50px;
+	background-color: aliceblue;
+}
+
+.buttonWrapper {
+	min-width: 150px;
+	align-content: center;
+}
+
+.button {
+	width: 100%;
+}
+
+.currentWrapper {
+	min-width: 200px;
+	align-content: center;
+	font-weight: 600;
 }

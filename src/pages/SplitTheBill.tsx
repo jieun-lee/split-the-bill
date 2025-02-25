@@ -14,7 +14,7 @@ const SplitTheBill: React.FC = () => {
 	const renderStage = useCallback(() => {
 		switch (currentStage) {
 			case Stage.GetStarted:
-				return <GetStartedStage />;
+				return <GetStartedStage onGetStartedClick={() => setCurrentStage(Stage.CreateReceipt)} />;
 			case Stage.CreateReceipt:
 				return <CreateReceiptStage />;
 			case Stage.AddPayees:
@@ -25,13 +25,12 @@ const SplitTheBill: React.FC = () => {
 				return <FinalBillStage />;
 			default:
 				// TODO: handle unknown stage, allow users to restart
-				return <GetStartedStage />;
+				return <GetStartedStage onGetStartedClick={() => setCurrentStage(Stage.CreateReceipt)} />;
 		}
 	}, [currentStage]);
 
 	return (
-		<div>
-			<h2>Split the Bill</h2>
+		<div className={styles.pageWrapper}>
 			<div className={styles.stageWrapper}>
 				{renderStage()}
 			</div>

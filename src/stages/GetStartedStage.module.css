@@ -1,0 +1,18 @@
+.textWrapper {
+	margin-bottom: 24px;
+}
+
+.getStartedButton {
+	padding: 16px 32px;
+	border-radius: 16px;
+	border: none;
+	background-color: lightskyblue;
+	font-size: 16px;
+	font-weight: 600;
+}
+
+.getStartedButton:hover,
+.getStartedButton:active {
+	background-color: cornflowerblue;
+	cursor: pointer;
+}

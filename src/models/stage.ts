@@ -1,5 +1,5 @@
 export enum Stage {
-	GetStarted = 0,
+	GetStarted = 0, // doesn't count as an official stage you can switch to
 	CreateReceipt = 1,
 	AddPayees = 2,
 	AllocateItems = 3,
@@ -25,7 +25,7 @@ export const getStageName = (stage: Stage): string => {
 }
 
 export const getPreviousStage = (currentStage: Stage): Stage | undefined => {
-	if (currentStage === Stage.GetStarted) {
+	if (currentStage === Stage.GetStarted || currentStage === Stage.CreateReceipt) {
 		return undefined;
 	}
 	else {
