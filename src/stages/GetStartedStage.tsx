@@ -1,10 +1,10 @@
 import styles from './GetStartedStage.module.css';
 
-interface IGetStartedStage {
+interface IGetStartedStageProps {
 	onGetStartedClick: () => void;
 }
 
-const GetStartedStage: React.FC<IGetStartedStage> = (props) => {
+const GetStartedStage: React.FC<IGetStartedStageProps> = (props) => {
 	const { onGetStartedClick } = props;
 	return (
 		<div>

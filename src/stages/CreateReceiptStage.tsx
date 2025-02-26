@@ -1,8 +1,7 @@
 import { useContext, useMemo } from "react"
 import { ReceiptContext } from "@/models/ReceiptContext"
 import styles from './CreateReceiptStage.module.css';
-
-interface ICreateReceiptStageProps {}
+import ReceiptItems from "@/components/ReceiptItems";
 
 const CreateReceiptStage: React.FC = () => {
 	const { values: receipt, subTotal, setReceiptName, setTax, setTip, addItem, removeItem } = useContext(ReceiptContext);
@@ -36,6 +35,7 @@ const CreateReceiptStage: React.FC = () => {
 					placeholder="Receipt Name"
 				/>
 			</div>
+			<ReceiptItems receiptItems={receipt.items} addItem={addItem} removeItem={removeItem} />
 			<div className={styles.totalsWrapper}>
 				{`Sub-Total: ${subTotal}`}
 			</div>

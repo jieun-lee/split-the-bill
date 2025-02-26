@@ -1,4 +1,4 @@
-import { getStageName, Stage } from "@/models/stage";
+import { getStageName, Stage } from "@/models/Stage";
 import styles from './StageSelector.module.css';
 
 interface IStageSelectorProps {

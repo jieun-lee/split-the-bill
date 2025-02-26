@@ -1,5 +1,5 @@
 import StageSelector from '@/components/StageSelector';
-import { getNextStage, getPreviousStage, Stage } from '@/models/stage';
+import { getNextStage, getPreviousStage, Stage } from '@/models/Stage';
 import AddPayeesStage from '@/stages/AddPayeesStage';
 import AllocateItemsStage from '@/stages/AllocateItemsStage';
 import CreateReceiptStage from '@/stages/CreateReceiptStage';
