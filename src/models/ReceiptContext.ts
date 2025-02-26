@@ -1,9 +1,10 @@
-import { createContext, useState } from 'react';
+import { createContext, useMemo, useState } from 'react';
 import { ReceiptItem } from './ReceiptItem';
 import { initialReceipt, IReceipt } from './Receipt';
 
 interface IReceiptContext {
 	values: IReceipt,
+	subTotal: number,
 	setReceiptName: (name: string) => void;
 	setTax: (tax: number) => void;
 	setTip: (tip: number) => void;
@@ -17,6 +18,7 @@ interface IReceiptContext {
 
 const initialContext: IReceiptContext = {
 	values: initialReceipt,
+	subTotal: 0,
 	setReceiptName: () => {},
 	setTax: () => {},
 	setTip: () => {},
@@ -36,6 +38,10 @@ export const useReceiptContext = () => {
 	const [tip, setTip] = useState<number | undefined>(initialReceipt.tipPercent);
 	const [items, setItems] = useState<ReceiptItem[]>(initialReceipt.items);
 	const [payees, setPayees] = useState<string[]>(initialReceipt.payees);
+
+	const subTotal = useMemo(() => {
+		return items.reduce((acc, item) => acc + item.price, 0);
+	}, [items]);
 
 	const addItem = (item: ReceiptItem) => {
 		// TODO	
@@ -73,6 +79,7 @@ export const useReceiptContext = () => {
 
 	return {
 		values: getContextValues(),
+		subTotal,
 		setReceiptName,
 		setTax,
 		setTip,

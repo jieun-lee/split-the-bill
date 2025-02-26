@@ -3,3 +3,36 @@
 	flex-direction: column;
 	max-width: 500px;
 }
+
+.receiptWrapper > div {
+	margin-bottom: 24px;
+}
+
+.input {
+	padding: 8px;
+}
+
+.receiptNameInput {
+	width: 500px;
+	font-size: 16px;
+	font-weight: 600;
+}
+
+.percentageWrapper {
+	align-self: end;
+	display: flex;
+	align-items: center;
+}
+
+.percentageInput {
+	padding-right: 0;
+	width: 50px;
+}
+
+.percentageValue {
+	margin-left: 32px;
+}
+
+.totalsWrapper {
+	align-self: end;
+}
