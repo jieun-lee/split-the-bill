@@ -1,0 +1,32 @@
+.receiptItem {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	text-align: left;
+	padding: 8px;
+}
+
+.newItem {
+	display: flex;
+	height: 36px;
+	margin-top: 8px;
+}
+
+.newItemName {
+	padding: 8px;
+	margin-right: 2px;
+	font-size: 16px;
+	flex-grow: 1;
+}
+
+.newItemPrice {
+	padding: 8px;
+	font-size: 16px;
+	width: 120px;
+}
+
+.addButton {
+	padding: 8px;
+	margin-left: 2px;
+	font-size: 16px;
+}

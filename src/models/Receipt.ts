@@ -1,19 +1,20 @@
 import { ReceiptItem } from "./ReceiptItem";
 
 export type ReceiptItemsList = { [key: string]: ReceiptItem };
+export type PercentType = number | "";
 
 export interface IReceipt {
-	receiptName: string | undefined;
-	taxPercent: number | undefined;
-	tipPercent: number | undefined;
+	receiptName: string;
+	taxPercent: PercentType;
+	tipPercent: PercentType;
 	items: ReceiptItemsList;
 	payees: string[];
 }
 
-export const initialReceipt = {
-	receiptName: undefined,
-	taxPercent: undefined,
-	tipPercent: undefined,
+export const initialReceipt: IReceipt = {
+	receiptName: "",
+	taxPercent: "",
+	tipPercent: "",
 	items: {},
 	payees: [],
 }

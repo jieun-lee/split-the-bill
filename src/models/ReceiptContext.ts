@@ -1,13 +1,13 @@
 import { createContext, useCallback, useMemo, useState } from 'react';
 import { ReceiptItem } from './ReceiptItem';
-import { initialReceipt, IReceipt, ReceiptItemsList } from './Receipt';
+import { initialReceipt, IReceipt, PercentType, ReceiptItemsList } from './Receipt';
 
 interface IReceiptContext {
 	values: IReceipt,
 	subTotal: number,
 	setReceiptName: (name: string) => void;
-	setTax: (tax: number) => void;
-	setTip: (tip: number) => void;
+	setTax: (tax: PercentType) => void;
+	setTip: (tip: PercentType) => void;
 	addItem: (itemName: string, price: number) => void;
 	removeItem: (itemId: string) => void;
 	addPayee: (name: string) => void;
@@ -33,9 +33,9 @@ const initialContext: IReceiptContext = {
 export const ReceiptContext = createContext(initialContext);
 
 export const useReceiptContext = () => {
-	const [receiptName, setReceiptName] = useState<string | undefined>(initialReceipt.receiptName);
-	const [tax, setTax] = useState<number | undefined>(initialReceipt.taxPercent);
-	const [tip, setTip] = useState<number | undefined>(initialReceipt.tipPercent);
+	const [receiptName, setReceiptName] = useState<string>(initialReceipt.receiptName);
+	const [tax, setTax] = useState<PercentType>(initialReceipt.taxPercent);
+	const [tip, setTip] = useState<PercentType>(initialReceipt.tipPercent);
 	const [items, setItems] = useState<ReceiptItemsList>(initialReceipt.items);
 	const [payees, setPayees] = useState<string[]>(initialReceipt.payees);
 	const [nextId, setNextId] = useState<number>(0);

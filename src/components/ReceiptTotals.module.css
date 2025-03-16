@@ -1,0 +1,35 @@
+.totalsWrapper {
+	display: flex;
+	flex-direction: column;
+	align-self: flex-end;
+	max-width: 300px;
+}
+
+.input {
+	padding: 8px;
+}
+
+.lineWrapper {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	max-width: 300px;
+}
+
+.subTotalWrapper {
+	margin-top: 8px;
+	margin-bottom: 24px;
+}
+
+.percentageInput {
+	padding-right: 0;
+	width: 50px;
+}
+
+.percentageValue {
+	margin-left: 32px;
+}
+
+.bold {
+	font-weight: 600;
+}
